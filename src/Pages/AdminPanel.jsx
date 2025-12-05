@@ -27,7 +27,6 @@ const AdminPanel = () => {
       const response = await api.patch(`/posts/${id}/approve`);
       setposts(posts.filter((post) => post._id !== id));
       toast.success(response.data.message);
-      navigate("/");
     } catch (error) {
       setError(error.response.data.message);
       toast.error(error.response.data.message);
